@@ -1,0 +1,125 @@
+:host{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.container {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 30px 30px;
+    justify-content: center;
+}
+
+.list-block{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.list-element {
+    display: flex;
+    flex-direction: row;
+    gap: 5px; 
+}
+
+.command-panel {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    width: 100%; 
+}
+
+.create-task{
+    flex: 0 0 auto;
+    display: flex;
+    height: auto;
+    padding-right: 10px;
+}
+
+.create-button {
+    flex: 0 0 auto;
+    height: auto;
+    border: 1px transparent;
+    border-radius: 7px;
+    font-family: inherit;
+}
+
+.search-panel{
+    flex: 1 1 0;     
+    display: flex;
+    min-width: 0;  
+    height: 30px;    
+    gap: 10px;
+}
+
+.search-button { 
+    flex: 0 0 auto;
+    height: auto;
+    border: 1px transparent;
+    border-radius: 7px;
+    font-family: inherit;
+}
+
+.text-input {
+    width: 100%;
+    flex: 1;  
+    min-width: 0;
+    border: 1px solid gray;
+    border-radius: 7px;
+    font-family: inherit;
+}
+
+.list-block {
+    padding: 0 10px;
+}
+
+.list-element{
+    display: flex;
+    border-bottom: 1px solid darkgray;
+    height: 50px;
+    align-items: center;
+}
+
+
+.list-buttons-block {
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: end;
+    gap: 10px;
+}
+
+.id-block{
+    width: 30px;
+}
+
+.title-block{
+    width: 230px;
+}
+
+.description-block{
+    width: 430px;
+}
+
+.status-block{
+     width: 80px;
+}
+
+.edit-button {
+    height: 30px;
+    border: 1px transparent;
+    border-radius: 7px;
+    font-family: inherit;
+}
+
+.delete-button {
+    height: 30px;
+    border: 1px transparent;
+    border-radius: 7px;
+    font-family: inherit;
+}
+

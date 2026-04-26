@@ -1,0 +1,68 @@
+@let tasks = (tasks$ | async);
+
+<div class="container">
+  <div class="title-text">
+    <h1>Список задач</h1>
+  </div>
+  <div class="command-panel">
+    <div class="create-task">
+      <button (click)="openModal()" class="create-button">Создать задачу</button>
+    </div>
+    <div class="search-panel">
+      <input class="text-input"
+        type="text"  
+        [ngModel]="searchValue()" 
+        (ngModelChange)="searchValue.set($event)" 
+        placeholder="Введите ID">
+    <button class="search-button" (click)="getTaskById(searchValue())">Найти</button>
+    </div>  
+  </div>
+  <div class="list-block">
+    <div class="list-element">
+      <div class="id-block">ID</div>
+      <div class="title-block">Title</div>
+      <div class="description-block">Description</div>
+      <div class="status-block">Status</div>
+    </div>
+    
+    @for (task of tasks; track task.id) {
+      <div class="list-element">    
+          <div class="id-block">{{ task.id }}</div>
+          <div class="title-block">{{ task.title }}</div>
+          <div class="description-block">{{ task.description }}</div>
+          <div class="status-block">{{ task.status }}</div>
+        <div class="list-buttons-block">  
+          <button class="edit-button" (click)="openModal(task)">Редактировать задачу</button>
+          <button class="delete-button" (click)="deleteTask(task.id!)">Удалить задачу</button>
+        </div>
+      </div> 
+      
+    }
+  </div>
+</div>
+<div>
+  <div class="pagination" style="display: flex; gap: 10px; align-items: center; margin-top: 20px;">
+    <button 
+      [disabled]="currentPage === 0" 
+      (click)="currentPage = currentPage - 1; refreshTasks()">
+      ← Назад
+    </button>
+    <span>Страница {{ currentPage + 1 }} из {{ totalPages }}</span>
+    <button 
+      [disabled]="currentPage >= totalPages - 1" 
+      (click)="currentPage = currentPage + 1; refreshTasks()">
+      Вперед →
+    </button>
+    
+    <small>(Всего задач: {{ totalElements }})</small>
+  </div>
+</div>
+
+
+<ng-container #modalContainer></ng-container>
+
+
+
+
+
+

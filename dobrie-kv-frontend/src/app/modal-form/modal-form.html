@@ -1,0 +1,36 @@
+<div class="modal">
+        <div>
+                <h3>Создание/Редактирование задачи</h3>
+        </div>
+    <div>
+        <input class="title" 
+        [ngModel]="taskModel().title" 
+        (ngModelChange)="updateField('title', $event)"
+        placeholder="Название" />
+    </div>
+    <div>
+        <textarea class="description"
+        [ngModel]="taskModel().description" 
+        (ngModelChange)="updateField('description', $event)" placeholder="Описание" ></textarea>
+    </div>
+    <div>
+        <select class="status"
+        [ngModel]="taskModel().status" 
+        (ngModelChange)="updateField('status', $event)">
+                <option value="NEW">Новая</option>
+                <option value="IN_PROGRESS">В обработке</option>
+                <option value="DONE">Завершенная</option>
+        </select>  
+    </div>
+    <div>
+        <input class="date" type="text" [value]="'Дата создания: ' + taskModel().createdAt" readonly />
+    </div>
+    <div>
+        <input class="date" type="text" [value]="'Дата изменения: ' + taskModel().updatedAt" readonly />
+    </div>   
+    <div>
+        <button class="save-button" (click)="onSave()">Сохранить</button>
+    </div>           
+</div>
+
+

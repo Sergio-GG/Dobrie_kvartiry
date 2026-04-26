@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+ @font-face {
+  font-family: 'GeistVariableVF'; /* Придумайте название */
+  src: url('/fonts/GeistVariableVF.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; 
+}
+
+body {
+  font-family: 'GeistVariableVF', sans-serif;
+}   
+    
